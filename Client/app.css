@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .switch-field {
 	display: flex;
@@ -130,4 +130,297 @@ h2 {
 
 body, html {
   height: 100%;
+} */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0.5; 
+}
+
+.content {
+    position: relative;
+    z-index: 1; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator-container {
+    backdrop-filter: blur(10px);
+    /* background: linear-gradient(135deg, #6e48aa, #9d50bb, #7b68ee); */
+    background: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    max-width: 400px;
+    width: 100%;
+    height: 520px;
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    
+}
+
+.calculator-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.calculator-container:hover h1 {
+    transform: translateY(-5px);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .calculator-container {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input, select, button {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    input, select, button {
+        font-size: 0.9em;
+    }
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+html, body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    
+}
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* .calculator-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+} */
+.form {
+    padding: 20px;
+}
+.row {
+    height: 45px;
+    position: relative;
+    margin-bottom: 15px;
+    background-color: azure;
+}
+.row input, .row select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.row label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #636c72;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    background-color: transparent;
+}
+.row input:focus ~ label, .row input:valid ~ label,
+.row select:focus ~ label, .row select:valid ~ label {
+    top: 0;
+    left: 20px;
+    color: #000000;
+    background-color: #fff;
+}
+.row input:focus, .row input:valid,
+.row select:focus, .row select:valid {
+    border-color: #000000;
+    background-color: #fff;
+}
+.switch-field {
+    margin: 10px 0;
+}
+.switch-field input {
+    display: none;
+}
+.switch-field label {
+    display: inline-block;
+    width: 40px;
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+.switch-field input:checked + label {
+    background: #000000;
+}
+.submit {
+    padding: 10px 20px;
+    background-color: rgb(108, 108, 188);;
+    /* background-color: #eb3b5a; */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.submit:hover {
+    background-color: rgb(108, 108, 188);;
+    /* background-color: #fc5c65; */
+}
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #636c72;
+}
+/* Existing CSS */
+.row {
+    height: 45px;
+    position: relative;
+    margin-bottom: 15px;
+    background-color: azure;
+    border-radius: 10%;
+    
+}
+.row input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.row label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #636c72;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    background-color: transparent;
+    
+}
+.row input:focus ~ label,
+.row input:valid ~ label {
+    top: 0;
+    left: 20px;
+    color: #000000;
+    background-color: #fff;
+}
+.row input:focus,
+.row input:valid {
+    border-color: #000000;
+    background-color: #fff;
+}
+.switch-field {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    
+}
+.switch-field input {
+    display: none;
+}
+.switch-field label {
+    display: inline-block;
+    width: 50px;
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 30%;
+}
+.switch-field input:checked + label {
+    /* background: #fc5c65; */
+    background: rgb(108, 108, 188);;
+}
+.b{
+    border-radius: 50%;
 }

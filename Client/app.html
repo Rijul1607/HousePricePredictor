@@ -4,8 +4,10 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Banglore Home Price Prediction</title>
+	<title>Delhi Home Price Prediction</title>
 	<link rel="stylesheet" href="app.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="app.js"></script>
 </head>
 
 <body>
@@ -17,10 +19,14 @@
 		</video>
 	</div>
 	<div class="calculator-container">
-		<h1>Home Price Calculator</h1>
+		<!-- <h1>Home Price Calculator</h1> -->
+		<div class="name">
+
+				<img src="logo-removebg-preview.png" alt="">	
+			</div>
 		<form class="form">
 			<div class="row">
-				<input type="text" class="area" id="uiSqft" name="Squareft" required>
+				<input type="number" class="area" id="uiSqft" name="Squareft" required>
 				<label>Area (Square Feet)</label>
 			</div>
 			<br>
@@ -57,13 +63,13 @@
 			<div class="row">
 				<select class="location" id="uiLocations" required>
 					<option value="" disabled="disabled" selected="selected"></option>
-					<option>Electronic City</option>
-					<option>Rajaji Nagar</option>
+					<option>Dilshad Garden</option>
+					<option>Rohini Sector 21</option>
 				</select>
 				<label>Location</label>
 			</div>
 			<button class="submit" onclick="onClickedEstimatePrice()" type="button">
-				<h3>Estimate Price</h3>
+				Estimate Price
 			</button>
 			<div id="uiEstimatedPrice" class="result">
 				<h2></h2>
@@ -73,8 +79,7 @@
 	</div>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="app.js"></script>
+	
 </body>
 
 </html>

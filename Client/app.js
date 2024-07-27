@@ -19,12 +19,20 @@ function getBathValue() {
   }
   
   function onClickedEstimatePrice() {
+    event.preventDefault(); // Prevent the form from submitting normally
+    const estimatedPriceBox = document.getElementById('uiEstimatedPrice');
+    estimatedPriceBox.classList.add('show'); // Show the prediction box
+
     console.log("Estimate price button clicked");
     var sqft = document.getElementById("uiSqft");
     var bhk = getBHKValue();
     var bathrooms = getBathValue();
     var location = document.getElementById("uiLocations");
     var estPrice = document.getElementById("uiEstimatedPrice");
+    if (sqft.value === "" || isNaN(sqft.value) || parseFloat(sqft.value) <= 0) {
+      estPrice.innerHTML = "<h2>Please enter a valid area in square feet</h2>";
+      return;
+  }
   
     var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
     // var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
